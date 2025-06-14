@@ -24,6 +24,13 @@ connectCloudinary()
 app.use('/api/admin',adminRouter)
 app.use('/api/developers',developersRouter)
 app.use('/api/users',userRouter)
+app.use(cors({
+  origin: [
+    "https://devhire-panel.vercel.app",
+    "https://devhire-admin.vercel.app"
+  ],
+  credentials: true
+}));
 //localhost:6969/api/admin/add-developers
 
 app.get('/', (req, res) => {

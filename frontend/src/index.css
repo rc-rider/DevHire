@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  font-family: Outfit;
+  
+}
+.active hr {
+    @apply block
+}
+
+::-webkit-scrollbar{
+    @apply hidden
+}
+
+@keyframes wave {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+@media (max-width:740px) {
+  .active p{
+    @apply text-white bg-primary 
+  }
+  
+}
+
+/* Apply the animation */
+.animate-wave {
+  animation: wave 2.7s infinite ease-in-out;
+}
+
+/* When hovering, stop the animation but keep the element at its current position */
+.group:hover .animate-wave {
+  animation-play-state: paused;
+}
